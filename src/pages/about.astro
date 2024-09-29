@@ -8,12 +8,10 @@ import { getCollection } from "astro:content";
 const about = await getCollection("about");
 
 const aboutPages = await Promise.all(
-  about.map((page) => {
-    return page.render();
+  about.map(async (page) => {
+    return { title: page.data.title, Content: (await page.render()).Content };
   })
 );
-
-console.log(aboutPages.at(0)?.Content);
 ---
 
 <BaseLayout
@@ -24,7 +22,7 @@ console.log(aboutPages.at(0)?.Content);
     <main class="wrapper about">
       <Hero
         title="About"
-        tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+        tagline="Thanks for stopping by. Read below to learn more about me and my background."
       >
         <img
           width="1553"
@@ -33,47 +31,16 @@ console.log(aboutPages.at(0)?.Content);
           alt="Sherif Hoti"
         />
       </Hero>
-
-      <section>
-        <h2 class="section-title">Background</h2>
-        <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a>
-            makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum
-            vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra
-            diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus
-            in ornare.
-          </p>
-          <p>
-            Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget
-            gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat
-            pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh
-            venenatis cras sed felis eget velit. Id diam vel quam elementum
-            pulvinar etiam non.
-          </p>
-          <p>
-            Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut
-            sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor
-            posuere ac ut consequat semper viverra. Viverra accumsan in nisl
-            nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-            pretium fusce.
-          </p>
-          {aboutPages.map(({ Content }) => <Content />)}
-        </div>
-      </section>
-      <section>
-        <h2 class="section-title">Education</h2>
-        <div class="content">
-          <p>Corporis voluptates tenetur laudantium.</p>
-        </div>
-      </section>
-      <section>
-        <h2 class="section-title">Skills</h2>
-        <div class="content">
-          <p>officia unde omnis</p>
-        </div>
-      </section>
+      {
+        aboutPages.map(({ title, Content }) => (
+          <section>
+            <h2 class="section-title">{title}</h2>
+            <div class="content">
+              <Content />
+            </div>
+          </section>
+        ))
+      }
     </main>
 
     <ContactCTA />
@@ -104,10 +71,13 @@ console.log(aboutPages.at(0)?.Content);
     grid-column-start: 1;
     font-size: var(--text-xl);
     color: var(--gray-0);
+    text-transform: capitalize;
   }
 
   .content {
     grid-column: 2 / 4;
+    display: grid;
+    gap: 0.5em;
   }
 
   .content :global(a) {

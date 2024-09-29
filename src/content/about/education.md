@@ -2,14 +2,15 @@
 title: "education"
 ---
 
-I am a passionate software engineer with 3+ years of experience
-in crafting robust and scalable web applications. My core
-expertise lies in TypeScript, JavaScript, and React for frontend
-development, complemented by backend proficiency in Java, Spring
-Boot, and Express.js. I have a strong foundation in relational
-databases and have worked with various technologies such as C#,
-Vue, Lit, and Solid. I thrive in dynamic environments, embracing
-challenges as opportunities for growth. My collaborative spirit
-and eagerness to learn make me a valuable asset to any team. I
-am committed to delivering high-quality software solutions that
-exceed expectations.
+##### Highschool Degree    
+
+* **GJIMNAZI I SPECIALIZUAR MATEMATIKOR**
+* September 2017 - June 2020
+* **Main Subjects:** Java (5), C++ (5), Mathematical Analysis (4), Number Theory (5), Statistics (5), Databases (4), Combinatorics (5), Algebra 1 (4), Algebra II (4), Inequations (5), Geometry (4)      
+
+##### Bachelor's Degree 
+
+* **UBT**
+* September 2020 - Present
+* **BSc Computer Science**
+* **Key Modules:** Algorithms, Object Oriented Programming, Web Infrastructure, Database Basics, Math I/II, Graph Theory for CS, Computer Networking

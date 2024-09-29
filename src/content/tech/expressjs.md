@@ -1,6 +1,6 @@
 ---
 title: ExpressJs
-img: /assets/stock-4.jpg
+img: /assets/expressjs.svg
 img_alt: ExpressJs
 description: |
   ExpressJs

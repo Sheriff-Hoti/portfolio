@@ -14,10 +14,7 @@ export const collections = {
   about: defineCollection({
     type: "content",
     schema: z.object({
-      title: z
-        .literal("backround")
-        .or(z.literal("education"))
-        .or(z.literal("skills")),
+      title: z.string(),
     }),
   }),
 };

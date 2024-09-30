@@ -1,6 +1,6 @@
 ---
 title: Reactjs and Nextjs
-img: /assets/reactjs.svg
+img: /portfolio/assets/reactjs.svg
 img_alt: Nextjs Logo
 description: |
   Reactjs and Nextjs

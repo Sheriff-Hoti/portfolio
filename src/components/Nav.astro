@@ -5,9 +5,9 @@ import type { iconPaths } from "./IconPaths";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
-  { label: "Stack", href: "/stack/" },
-  { label: "About", href: "/about/" },
+  { label: "Home", href: "/portfolio/" },
+  { label: "Stack", href: "/portfolio/stack/" },
+  { label: "About", href: "/portfolio/about/" },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -29,16 +29,16 @@ const iconLinks: {
   },
   {
     label: "CV",
-    href: "/assets/cv.pdf",
+    href: "/portfolio/assets/cv.pdf",
     icon: "file-download",
-    download: "/assets/cv.pdf",
+    download: "/portfolio/assets/cv.pdf",
   },
 ];
 ---
 
 <nav>
   <div class="menu-header">
-    <a href="/" class="site-title">
+    <a href="/portfolio" class="site-title">
       <Icon
         icon="terminal-window"
         color="var(--accent-regular)"
@@ -68,7 +68,8 @@ const iconLinks: {
                 {
                   active:
                     Astro.url.pathname === href ||
-                    (href !== "/" && Astro.url.pathname.startsWith(href)),
+                    (href !== "/portfolio/" &&
+                      Astro.url.pathname.startsWith(href)),
                 },
               ]}
               href={href}
@@ -108,7 +109,8 @@ const iconLinks: {
                 {
                   active:
                     Astro.url.pathname === href ||
-                    (href !== "/" && Astro.url.pathname.startsWith(href)),
+                    (href !== "/portfolio/" &&
+                      Astro.url.pathname.startsWith(href)),
                 },
               ]}
               href={href}

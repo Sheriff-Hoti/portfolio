@@ -1,7 +1,7 @@
 ---
 title: Java and Springboot
 
-img: /assets/springboot.svg
+img: /portfolio/assets/springboot.svg
 img_alt: Java and Springboot
 description: |
   Java and Springboot

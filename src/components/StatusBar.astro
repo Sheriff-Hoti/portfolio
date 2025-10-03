@@ -6,9 +6,57 @@
 
   <div class="flex flex-wrap items-center gap-3">
     <span class="rounded-md border border-terminal-border-soft px-3 py-1 text-terminal-foreground">UTF-8</span>
+    <button
+      id="theme-toggle"
+      type="button"
+      class="flex items-center gap-2 rounded-md border border-terminal-border-soft px-3 py-1 text-terminal-foreground transition-colors hover:border-terminal-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-terminal-accent/70"
+      aria-pressed="false"
+    >
+      <span data-indicator class="inline-block h-2 w-2 rounded-full bg-terminal-accent transition-all"></span>
+      <span data-label>Dark Mode</span>
+    </button>
     <span class="flex items-center gap-2 rounded-md border border-terminal-border-soft px-3 py-1 text-terminal-foreground">
       <span class="inline-block h-2 w-2 rounded-full bg-terminal-accent"></span>
       Fish Cake
     </span>
   </div>
 </footer>
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+
+    const indicator = button.querySelector('[data-indicator]');
+    const label = button.querySelector('[data-label]');
+
+    const updateState = () => {
+      const current = root.dataset.theme === 'light' ? 'light' : 'dark';
+      if (label) {
+        label.textContent = current === 'light' ? 'Light Mode' : 'Dark Mode';
+        button.setAttribute('aria-pressed', current === 'light' ? 'true' : 'false');
+        button.title = current === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
+      }
+      if (indicator) {
+        indicator.classList.toggle('bg-terminal-green', current === 'light');
+        indicator.classList.toggle('bg-terminal-accent', current !== 'light');
+      }
+    };
+
+    updateState();
+
+    button.addEventListener('click', () => {
+      const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+      if (typeof window.__setPreferredTheme === 'function') {
+        window.__setPreferredTheme(next);
+      } else {
+        root.dataset.theme = next;
+      }
+      updateState();
+    });
+
+    const observer = new MutationObserver(updateState);
+    observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+  })();
+</script>

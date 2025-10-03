@@ -3,13 +3,63 @@ import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Lipgloss Tribute</title>
+		<script is:inline>
+			(() => {
+				const storageKey = 'theme-preference';
+				const root = document.documentElement;
+				const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+
+				const readStorage = () => {
+					try {
+						return localStorage.getItem(storageKey);
+					} catch (error) {
+						return null;
+					}
+				};
+
+				const writeStorage = (value) => {
+					try {
+						localStorage.setItem(storageKey, value);
+					} catch (error) {
+						// ignore write errors (e.g. private mode)
+					}
+				};
+
+				const preferredTheme = () => {
+					const stored = readStorage();
+					if (stored === 'light' || stored === 'dark') {
+						return stored;
+					}
+					return mediaQuery.matches ? 'light' : 'dark';
+				};
+
+				const applyTheme = (theme) => {
+					root.dataset.theme = theme;
+				};
+
+				const initial = preferredTheme();
+				applyTheme(initial);
+
+				window.__setPreferredTheme = (next) => {
+					const theme = next === 'light' ? 'light' : 'dark';
+					applyTheme(theme);
+					writeStorage(theme);
+				};
+
+				mediaQuery.addEventListener('change', (event) => {
+					if (!readStorage()) {
+						applyTheme(event.matches ? 'light' : 'dark');
+					}
+				});
+			})();
+		</script>
 	</head>
 	<body class="min-h-screen bg-terminal-bg text-terminal-foreground">
 		<slot />

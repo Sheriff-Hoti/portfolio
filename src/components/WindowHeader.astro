@@ -1,0 +1,34 @@
+---
+const tabs = [
+  { label: 'Lip Gloss', active: true },
+  { label: 'Blush' },
+  { label: 'Eye Shadow' },
+  { label: 'Mascara' },
+  { label: 'Foundation' },
+];
+---
+
+<header class="border-b border-terminal-border-soft bg-terminal-panel px-6 py-5">
+  <div class="flex flex-col gap-4 text-[11px] uppercase tracking-[0.35em] text-terminal-muted sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex flex-wrap items-center gap-3 text-terminal-foreground">
+      <div class="flex items-center gap-2">
+        <span class="h-3 w-3 rounded-full bg-[#ff5f56]"></span>
+        <span class="h-3 w-3 rounded-full bg-[#ffbd2e]"></span>
+        <span class="h-3 w-3 rounded-full bg-[#28c840]"></span>
+      </div>
+      <span>&gt; ./lipgloss-example</span>
+    </div>
+    <span class="text-terminal-muted">charmbracelet/lipgloss</span>
+  </div>
+
+  <nav class="mt-6 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.3em]">
+    {tabs.map((tab) => (
+      <span
+        class:list={[tab.active ? 'bg-gradient-to-r from-terminal-accent-soft to-terminal-accent-strong text-terminal-panel shadow-terminal-glow border-terminal-accent' : 'border-terminal-border-soft text-terminal-muted hover:border-terminal-accent hover:text-terminal-foreground transition-colors']}
+        class="rounded-lg border px-4 py-2"
+      >
+        {tab.label}
+      </span>
+    ))}
+  </nav>
+</header>

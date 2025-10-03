@@ -1,0 +1,51 @@
+---
+const citrus = [
+  { label: 'Grapefruit', state: 'active' },
+  { label: 'Yuzu', state: 'active' },
+  { label: 'Citron', state: 'idle' },
+  { label: 'Kumquat', state: 'idle' },
+  { label: 'Pomelo', state: 'idle' },
+];
+
+const vendors = [
+  { label: 'Glossier', state: 'active' },
+  { label: "Claire's Boutique", state: 'idle' },
+  { label: 'Nyx', state: 'active' },
+  { label: 'Mac', state: 'idle' },
+  { label: 'Milk', state: 'idle' },
+];
+---
+
+<section class="grid gap-6 lg:grid-cols-3">
+  <div class="rounded-2xl border border-terminal-border-soft bg-terminal-panel-alt p-6">
+    <h2 class="text-[11px] uppercase tracking-[0.35em] text-terminal-accent-soft">Citrus Fruits to Try</h2>
+    <ul class="mt-4 space-y-2 text-sm">
+      {citrus.map((item) => (
+        <li class="flex items-center gap-3">
+          {item.state === 'active' ? (
+            <span class="text-terminal-green">✔</span>
+          ) : (
+            <span class="text-terminal-dim">○</span>
+          )}
+          <span class={item.state === 'active' ? 'text-terminal-foreground' : 'text-terminal-muted'}>{item.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="rounded-2xl border border-terminal-border-soft bg-terminal-panel-alt p-6">
+    <h2 class="text-[11px] uppercase tracking-[0.35em] text-terminal-accent-soft">Actual Lip Gloss Vendors</h2>
+    <ul class="mt-4 space-y-2 text-sm">
+      {vendors.map((item) => (
+        <li class:list={['flex items-center gap-3', item.state === 'active' ? 'text-terminal-foreground' : 'text-terminal-muted']}>
+          {item.state === 'active' ? <span class="text-terminal-green">✔</span> : <span class="block w-3"></span>}
+          <span>{item.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="flex items-center justify-center rounded-2xl border border-terminal-border-soft bg-terminal-panel-alt p-6">
+    <div class="aspect-square w-full max-w-[220px] rounded-xl border border-terminal-border-soft bg-gradient-to-br from-terminal-accent via-terminal-accent-soft via-60% to-terminal-yellow shadow-[inset_0_0_25px_rgba(0,0,0,0.25)]"></div>
+  </div>
+</section>

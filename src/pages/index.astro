@@ -1,11 +1,30 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import WindowHeader from '../components/WindowHeader.astro';
+import BadgeStack from '../components/BadgeStack.astro';
+import IntroSection from '../components/IntroSection.astro';
+import PromptDialog from '../components/PromptDialog.astro';
+import InfoColumns from '../components/InfoColumns.astro';
+import StoryGrid from '../components/StoryGrid.astro';
+import StatusBar from '../components/StatusBar.astro';
 ---
 
 <Layout>
-	<Welcome />
+  <main class="flex min-h-screen items-center justify-center px-4 py-12">
+    <section class="w-full max-w-6xl overflow-hidden rounded-[32px] border border-terminal-border-soft bg-terminal-panel shadow-terminal-window">
+      <WindowHeader />
+
+      <div class="grid gap-10 px-6 py-10 lg:grid-cols-[240px_1fr] lg:gap-14 lg:px-10 lg:py-12">
+        <BadgeStack />
+        <div class="space-y-12">
+          <IntroSection />
+          <PromptDialog />
+          <InfoColumns />
+          <StoryGrid />
+        </div>
+      </div>
+
+      <StatusBar />
+    </section>
+  </main>
 </Layout>

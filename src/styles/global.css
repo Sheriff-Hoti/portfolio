@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+@theme {
+  --font-terminal: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-terminal-bg: #0f0b1f;
+  --color-terminal-surface: #181129;
+  --color-terminal-panel: #211a35;
+  --color-terminal-panel-alt: #2b2144;
+  --color-terminal-border: #3d3058;
+  --color-terminal-border-soft: #45396b;
+  --color-terminal-foreground: #f4ecff;
+  --color-terminal-muted: #b8a4d4;
+  --color-terminal-dim: #746497;
+  --color-terminal-accent: #9f6eff;
+  --color-terminal-accent-soft: #c694ff;
+  --color-terminal-accent-strong: #f35ab6;
+  --color-terminal-green: #63f5b4;
+  --color-terminal-green-strong: #47d892;
+  --color-terminal-yellow: #f5dd7a;
+  --color-terminal-orange: #ff9568;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    background-color: var(--color-terminal-bg);
+  }
+
+  body {
+    @apply min-h-screen bg-terminal-bg text-terminal-foreground font-terminal antialiased;
+  }
+}
+
+@layer utilities {
+  .shadow-terminal-window {
+    box-shadow: 0 24px 60px rgba(8, 3, 20, 0.55);
+  }
+
+  .shadow-terminal-glow {
+    box-shadow: 0 0 0 1px rgba(159, 110, 255, 0.4);
+  }
+}

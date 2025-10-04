@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WindowHeader from '../components/WindowHeader.astro';
+import StatusBar from '../components/StatusBar.astro';
+
+const roles = [
+  'Frontend Systems',
+  'Backend Ops',
+  'UX Partnerships',
+];
+
+const strengths = [
+  {
+    title: 'Full-Stack Focus',
+    copy:
+      'Shape reliable product surfaces end-to-end, from API design to polished motion that feels natural inside fast-moving teams.',
+  },
+  {
+    title: 'Curious Learner',
+    copy:
+      'Iterate with intention, documenting learnings and sharing prototypes to keep squads aligned and shipping steady value.',
+  },
+  {
+    title: 'Strategy-First',
+    copy:
+      'Partner with product and design leads to map constraints, chart delivery milestones, and ensure launches hit measurable outcomes.',
+  },
+];
+
+const techHighlights = [
+  {
+    name: 'Express.js & Node',
+    blurb:
+      'Lean service layers with observability baked in, hardened by building internal tooling and customer-facing dashboards.',
+  },
+  {
+    name: 'Java & Spring Boot',
+    blurb:
+      'Structured APIs, worker queues, and domain modeling across mission-critical deployments in regulated environments.',
+  },
+  {
+    name: 'React & Next.js',
+    blurb:
+      'Modern app experiences with feature flags, accessibility baked-in, and delivery pipelines tuned for iterative launches.',
+  },
+];
+
+const recentWins = [
+  {
+    title: 'Growth Velocity',
+    detail:
+      'Lifted conversion funnels by 18% while keeping the release cadence at one meaningful shipping increment per week.',
+  },
+  {
+    title: 'DevEx Care',
+    detail:
+      'Rolled out CI guardrails and storybook docs that cut regression reports in half and reclaimed hours for focused feature work.',
+  },
+  {
+    title: 'Mentorship',
+    detail:
+      'Led weekly pairing sessions and onboarding playbooks that helped new teammates ship production-grade work within two sprints.',
+  },
+];
+---
+
+<Layout>
+  <main class="flex min-h-screen items-center justify-center px-4 py-12">
+    <section class="w-full max-w-6xl overflow-hidden rounded-[32px] border border-terminal-border-soft bg-terminal-panel shadow-terminal-window">
+      <WindowHeader />
+
+      <div class="space-y-12 px-6 py-10 lg:px-10 lg:py-12">
+        <header class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center">
+          <div class="space-y-6">
+            <div class="space-y-3">
+              <p class="inline-flex items-center gap-2 rounded-full border border-terminal-border-soft bg-terminal-panel-alt px-4 py-2 text-xs uppercase tracking-[0.35em] text-terminal-muted">
+                Portfolio Log — 2024
+              </p>
+              <h1 class="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+                Shipping resilient digital products with clarity and kindness.
+              </h1>
+              <p class="max-w-2xl text-terminal-muted">
+                I am Sherif Hoti, a full-stack software developer based in Prishtina, Kosovo.
+                I help product-led teams move from discovery to delivery with healthy, sustainable pace and craftsmanship.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              {roles.map((role) => (
+                <span class="flex items-center gap-2 rounded-full border border-terminal-border-soft bg-terminal-panel-alt/60 px-4 py-2 text-[0.78rem] uppercase tracking-[0.25em] text-terminal-accent-soft">
+                  <span class="inline-block h-2 w-2 rounded-full bg-terminal-accent"></span>
+                  {role}
+                </span>
+              ))}
+            </div>
+
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a
+                href="mailto:sherifhoti10@gmail.com"
+                class="inline-flex items-center justify-center gap-2 rounded-full bg-terminal-accent px-5 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-terminal-panel shadow-terminal-glow transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-terminal-accent/50"
+              >
+                Start a project
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 fill-current">
+                  <path d="M5 5h14v14h-2V8.414l-9.293 9.293-1.414-1.414L15.586 7H5V5z" />
+                </svg>
+              </a>
+              <p class="text-sm text-terminal-muted">
+                Prefer async? Grab the <a class="underline decoration-dotted underline-offset-4 hover:text-terminal-accent-soft" href="https://linkedin.com/in/sherif-hoti-92479b25a/" rel="noreferrer">LinkedIn</a> or
+                <a class="ml-1 underline decoration-dotted underline-offset-4 hover:text-terminal-accent-soft" href="https://github.com/Sheriff-Hoti" rel="noreferrer">GitHub</a>.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative hidden overflow-hidden rounded-3xl border border-terminal-border-soft bg-gradient-to-br from-terminal-panel-alt via-terminal-panel to-terminal-panel-alt/60 p-8 shadow-[0_35px_65px_rgba(14,6,32,0.35)] lg:block">
+            <div class="space-y-6">
+              <div class="space-y-2">
+                <p class="text-xs uppercase tracking-[0.35em] text-terminal-muted">Currently</p>
+                <p class="text-lg font-semibold text-terminal-foreground">Open to senior product engineering roles.</p>
+              </div>
+              <div class="space-y-2">
+                <p class="text-xs uppercase tracking-[0.35em] text-terminal-muted">Location</p>
+                <p class="text-lg font-semibold text-terminal-foreground">Prishtina, Kosovo · Remote EU/US friendly</p>
+              </div>
+              <div class="rounded-2xl border border-terminal-border-soft/70 bg-terminal-panel-alt/70 p-4 text-sm text-terminal-muted">
+                Dedicated to inclusive, feedback-rich culture. Advocate for shaping rituals, quality benchmarks, and pairing time that keep teams resilient.
+              </div>
+            </div>
+            <div class="pointer-events-none absolute -right-10 -top-12 h-44 w-44 rounded-full bg-terminal-accent/20 blur-3xl"></div>
+            <div class="pointer-events-none absolute -bottom-16 -left-6 h-36 w-36 rounded-full bg-terminal-green/15 blur-3xl"></div>
+          </div>
+        </header>
+
+        <section class="grid gap-6 md:grid-cols-3">
+          {strengths.map((strength) => (
+            <article class="rounded-3xl border border-terminal-border-soft bg-terminal-panel-alt/70 p-6 shadow-[0_18px_40px_rgba(17,8,32,0.32)]">
+              <h2 class="text-lg font-semibold text-terminal-foreground">{strength.title}</h2>
+              <p class="mt-3 text-sm leading-relaxed text-terminal-muted">{strength.copy}</p>
+            </article>
+          ))}
+        </section>
+
+        <section class="space-y-6">
+          <header class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-[0.35em] text-terminal-muted">Tech stack</p>
+              <h2 class="text-2xl font-semibold text-terminal-foreground">Capabilities that keep releases dependable</h2>
+            </div>
+            <a
+              href="https://sheriff-hoti.github.io/portfolio/stack/"
+              class="inline-flex items-center gap-2 rounded-full border border-terminal-border-soft px-4 py-2 text-xs uppercase tracking-[0.35em] text-terminal-muted transition-colors hover:border-terminal-accent hover:text-terminal-accent"
+              rel="noreferrer"
+            >
+              View original archive
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 fill-current">
+                <path d="M5 12h2a5 5 0 0 1 5-5V5l5 4-5 4v-2a3 3 0 0 0-3 3h-2a5 5 0 0 1 5-5V7l3 2-3 2v-.535A5.002 5.002 0 0 1 7 17H5a7 7 0 0 1 7-7V8.535A6.999 6.999 0 0 0 5 12z" />
+              </svg>
+            </a>
+          </header>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            {techHighlights.map((tech) => (
+              <article class="flex flex-col gap-4 rounded-3xl border border-terminal-border-soft bg-terminal-panel-alt/70 p-6">
+                <h3 class="text-lg font-semibold text-terminal-foreground">{tech.name}</h3>
+                <p class="text-sm leading-relaxed text-terminal-muted">{tech.blurb}</p>
+                <div class="mt-auto flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-terminal-accent-soft">
+                  <span class="inline-block h-2 w-2 rounded-full bg-terminal-accent"></span>
+                  Favorite use cases
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+          <div class="space-y-6 rounded-3xl border border-terminal-border-soft bg-terminal-panel-alt/60 p-6">
+            <p class="text-xs uppercase tracking-[0.35em] text-terminal-muted">Recent momentum</p>
+            <h2 class="text-2xl font-semibold text-terminal-foreground">Wins that shaped the last release cycles</h2>
+            <div class="grid gap-4 md:grid-cols-3">
+              {recentWins.map((win) => (
+                <div class="rounded-2xl border border-terminal-border-soft/70 bg-terminal-panel p-4 shadow-[0_14px_30px_rgba(15,7,28,0.28)]">
+                  <h3 class="text-sm font-semibold text-terminal-foreground">{win.title}</h3>
+                  <p class="mt-2 text-xs leading-relaxed text-terminal-muted">{win.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <aside class="flex flex-col justify-between gap-6 rounded-3xl border border-terminal-border-soft bg-gradient-to-br from-terminal-panel via-terminal-panel-alt to-terminal-panel p-6 shadow-[0_24px_50px_rgba(12,5,26,0.35)]">
+            <div class="space-y-3">
+              <p class="text-xs uppercase tracking-[0.35em] text-terminal-muted">Let’s collaborate</p>
+              <h2 class="text-xl font-semibold text-terminal-foreground">Need a partner for your next build?</h2>
+              <p class="text-sm leading-relaxed text-terminal-muted">
+                Drop a note with context, timeline, and impact goals. I’ll follow up within two business days with next steps or introductions that can help.
+              </p>
+            </div>
+            <div class="space-y-3">
+              <a
+                href="mailto:sherifhoti10@gmail.com?subject=Project%20Inquiry%20via%20Portfolio"
+                class="inline-flex items-center justify-center gap-2 rounded-full bg-terminal-accent px-5 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-terminal-panel transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-terminal-accent/50"
+              >
+                Send an email
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 fill-current">
+                  <path d="M2 6l10 7 10-7v12H2z" />
+                </svg>
+              </a>
+              <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.35em] text-terminal-muted">
+                <a class="underline decoration-dotted underline-offset-4 hover:text-terminal-accent-soft" href="https://github.com/Sheriff-Hoti" rel="noreferrer">GitHub</a>
+                <span>·</span>
+                <a class="underline decoration-dotted underline-offset-4 hover:text-terminal-accent-soft" href="https://linkedin.com/in/sherif-hoti-92479b25a/" rel="noreferrer">LinkedIn</a>
+                <span>·</span>
+                <a class="underline decoration-dotted underline-offset-4 hover:text-terminal-accent-soft" href="https://sheriff-hoti.github.io/portfolio/assets/cv.pdf" rel="noreferrer">Download CV</a>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </div>
+
+      <StatusBar />
+    </section>
+  </main>
+</Layout>

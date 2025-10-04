@@ -19,9 +19,9 @@
   --color-terminal-green-strong: #47d892;
   --color-terminal-yellow: #f5dd7a;
   --color-terminal-orange: #ff9568;
-  --color-story-card-1: #4a32a4;
-  --color-story-card-2: #4435b0;
-  --color-story-card-3: #3e37ba;
+  --color-story-card-1: rgba(65, 79, 179, 0.55);
+  --color-story-card-2: rgba(55, 95, 196, 0.58);
+  --color-story-card-3: rgba(47, 112, 212, 0.6);
   --color-pattern-cell: rgba(61, 48, 90, 0.45);
 }
 
@@ -67,6 +67,18 @@
 
   .shadow-terminal-glow {
     box-shadow: 0 0 0 1px rgba(159, 110, 255, 0.4);
+  }
+
+  .bg-story-card-1 {
+    background-color: var(--color-story-card-1);
+  }
+
+  .bg-story-card-2 {
+    background-color: var(--color-story-card-2);
+  }
+
+  .bg-story-card-3 {
+    background-color: var(--color-story-card-3);
   }
 
   .bg-matrix {

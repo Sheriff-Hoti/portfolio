@@ -1,4 +1,9 @@
-<footer class="flex flex-col gap-4 border-t border-terminal-border-soft bg-terminal-panel px-6 py-5 text-[11px] uppercase tracking-[0.35em] text-terminal-muted sm:flex-row sm:items-center sm:justify-between">
+<div data-status-bar-sentinel aria-hidden="true" class="status-bar__sentinel"></div>
+
+<footer
+  id="status-bar"
+  class="status-bar flex flex-col gap-4 border-t border-terminal-border-soft bg-terminal-panel px-6 py-5 text-[11px] uppercase tracking-[0.35em] text-terminal-muted sm:flex-row sm:items-center sm:justify-between"
+>
   <div class="flex items-center gap-3">
     <span class="rounded-md bg-terminal-accent-strong px-3 py-1 text-terminal-panel">Status</span>
     <span class="text-terminal-accent-soft">Ravishing</span>
@@ -26,37 +31,147 @@
   (() => {
     const root = document.documentElement;
     const button = document.getElementById('theme-toggle');
-    if (!button) return;
+    const footer = document.getElementById('status-bar');
+    const sentinel = document.querySelector('[data-status-bar-sentinel]');
 
-    const indicator = button.querySelector('[data-indicator]');
-    const label = button.querySelector('[data-label]');
+    if (button) {
+      const indicator = button.querySelector('[data-indicator]');
+      const label = button.querySelector('[data-label]');
 
-    const updateState = () => {
-      const current = root.dataset.theme === 'light' ? 'light' : 'dark';
-      if (label) {
-        label.textContent = current === 'light' ? 'Light Mode' : 'Dark Mode';
-        button.setAttribute('aria-pressed', current === 'light' ? 'true' : 'false');
-        button.title = current === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
-      }
-      if (indicator) {
-        indicator.classList.toggle('bg-terminal-green', current === 'light');
-        indicator.classList.toggle('bg-terminal-accent', current !== 'light');
-      }
-    };
+      const updateState = () => {
+        const current = root.dataset.theme === 'light' ? 'light' : 'dark';
+        if (label) {
+          label.textContent = current === 'light' ? 'Light Mode' : 'Dark Mode';
+          button.setAttribute('aria-pressed', current === 'light' ? 'true' : 'false');
+          button.title = current === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
+        }
+        if (indicator) {
+          indicator.classList.toggle('bg-terminal-green', current === 'light');
+          indicator.classList.toggle('bg-terminal-accent', current !== 'light');
+        }
+      };
 
-    updateState();
-
-    button.addEventListener('click', () => {
-      const next = root.dataset.theme === 'light' ? 'dark' : 'light';
-      if (typeof window.__setPreferredTheme === 'function') {
-        window.__setPreferredTheme(next);
-      } else {
-        root.dataset.theme = next;
-      }
       updateState();
-    });
 
-    const observer = new MutationObserver(updateState);
-    observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+      button.addEventListener('click', () => {
+        const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+        if (typeof window.__setPreferredTheme === 'function') {
+          window.__setPreferredTheme(next);
+        } else {
+          root.dataset.theme = next;
+        }
+        updateState();
+      });
+
+      const observer = new MutationObserver(updateState);
+      observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    }
+
+    if (footer && sentinel) {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let pendingFrame = null;
+
+      const ensureFrameCleared = () => {
+        if (pendingFrame !== null) {
+          cancelAnimationFrame(pendingFrame);
+          pendingFrame = null;
+        }
+      };
+
+      const showFloating = () => {
+        if (footer.classList.contains('status-bar--floating')) return;
+
+        footer.classList.add('status-bar--floating');
+
+        if (prefersReducedMotion.matches) {
+          footer.classList.add('status-bar--visible');
+          return;
+        }
+
+        ensureFrameCleared();
+        pendingFrame = requestAnimationFrame(() => {
+          footer.classList.add('status-bar--visible');
+          pendingFrame = null;
+        });
+      };
+
+      const hideFloating = () => {
+        if (!footer.classList.contains('status-bar--floating')) return;
+
+        ensureFrameCleared();
+
+        if (prefersReducedMotion.matches || !footer.classList.contains('status-bar--visible')) {
+          footer.classList.remove('status-bar--visible');
+          footer.classList.remove('status-bar--floating');
+          return;
+        }
+
+        footer.classList.remove('status-bar--visible');
+      };
+
+      footer.addEventListener('transitionend', (event) => {
+        if (event.target !== footer || event.propertyName !== 'transform') return;
+        if (footer.classList.contains('status-bar--visible')) return;
+        footer.classList.remove('status-bar--floating');
+      });
+
+      const statusObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry) return;
+          if (entry.isIntersecting) {
+            hideFloating();
+          } else {
+            showFloating();
+          }
+        },
+        { threshold: 0, rootMargin: '0px 0px -1px 0px' }
+      );
+
+      statusObserver.observe(sentinel);
+    }
   })();
 </script>
+
+<style>
+  .status-bar {
+    position: relative;
+    transition: transform 300ms ease-out, opacity 300ms ease-out, box-shadow 300ms ease-out;
+  }
+
+  .status-bar__sentinel {
+    width: 100%;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .status-bar--floating {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translate(-50%, 120%);
+    width: min(960px, calc(100% - 3rem));
+    max-width: calc(100% - 3rem);
+    border-radius: 0.75rem;
+    box-shadow: 0 28px 45px -30px rgba(9, 6, 14, 0.65);
+    opacity: 0;
+    z-index: 40;
+  }
+
+  .status-bar--floating.status-bar--visible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+
+  @media (min-width: 768px) {
+    .status-bar--floating {
+      width: min(720px, calc(100% - 4rem));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .status-bar {
+      transition: none;
+    }
+  }
+</style>

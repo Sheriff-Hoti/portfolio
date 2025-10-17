@@ -7,6 +7,7 @@ import PromptDialog from '../components/PromptDialog.astro';
 import InfoColumns from '../components/InfoColumns.astro';
 import StoryGrid from '../components/StoryGrid.astro';
 import StatusBar from '../components/StatusBar.astro';
+import ProfilePic from '../components/ProfilePic.astro';
 ---
 
 <Layout>
@@ -15,7 +16,7 @@ import StatusBar from '../components/StatusBar.astro';
       <WindowHeader />
 
       <div class="grid gap-10 px-6 py-10 lg:grid-cols-[240px_1fr] lg:gap-14 lg:px-10 lg:py-12">
-        <BadgeStack />
+        <ProfilePic />
         <div class="space-y-12">
           <IntroSection />
           <PromptDialog />

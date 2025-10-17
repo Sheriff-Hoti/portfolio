@@ -1,19 +1,25 @@
 ---
-const badges = [
+
+const gradients = [
   'from-terminal-accent-soft to-terminal-accent-strong',
   'from-terminal-accent to-terminal-accent-soft',
   'from-terminal-accent-strong to-terminal-accent',
   'from-terminal-accent-soft to-terminal-accent',
   'from-terminal-accent to-terminal-accent-soft',
 ];
+
+const defaultLabels = Array.from({ length: gradients.length }).map(() => 'Lip Gloss');
+
+const { items } = Astro.props;
+const labels = Array.isArray(items) && items.length ? items : defaultLabels;
 ---
 
 <div class="flex flex-col gap-3">
-  {badges.map((gradient, index) => (
+  {labels.map((label, index) => (
     <span
-      class={`rounded-xl border border-terminal-accent/40 bg-gradient-to-r ${gradient} px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-terminal-panel shadow-terminal-glow`}
+      class={`rounded-xl border border-terminal-accent/40 bg-gradient-to-r ${gradients[index % gradients.length]} px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-terminal-panel shadow-terminal-glow`}
     >
-      Lip Gloss
+      {label}
     </span>
   ))}
 </div>

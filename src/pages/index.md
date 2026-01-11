@@ -1,17 +1,19 @@
 ---
-title: Richard Hendriks - Resume
+title: Sherif Hoti - Resume
 description: Resume about Richard Hendriks, CEO of Pied Piper.
 layout: ../layouts/Minimalist.astro
 pdfLink: resume.pdf
 ---
 
-# Richard Hendriks
+# Sherif Hoti
 
 **Programmer**
 
-San Francisco, USA | richard.hendriks@gmail.com | http://richardhendricks.com
+Prishtina, Kosovo | richard.hendriks@gmail.com | http://richardhendricks.com
 
 Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!
+
+---
 
 ## Work Experience
 

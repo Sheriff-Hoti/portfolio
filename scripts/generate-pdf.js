@@ -6,12 +6,19 @@ const main = async () => {
 
   await page.goto("http://localhost:4321/", { waitUntil: "networkidle" });
 
+  await page.evaluate(() => {
+    const article = document.querySelector("#article-pdf-main");
+    if (!article) throw new Error("article-pdf-main not found");
+    document.body.innerHTML = "";
+    document.body.appendChild(article);
+    document.body.style.margin = "0";
+  });
+
   await page.emulateMedia({ media: "screen" });
 
   await page.pdf({
     path: "public/resume.pdf",
-    margin: { top: "50px", bottom: "80px" },
-    printBackground: true,
+    printBackground: false,
   });
 
   return browser.close();

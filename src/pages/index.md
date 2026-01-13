@@ -1,60 +1,58 @@
 ---
 title: Sherif Hoti - Resume
-description: Resume about Richard Hendriks, CEO of Pied Piper.
+description: Resume of Sherif Hoti.
 layout: ../layouts/Minimalist.astro
 pdfLink: resume.pdf
 ---
 
 # Sherif Hoti
 
-**Programmer**
+**Software Engineer**
 
-Prishtina, Kosovo | richard.hendriks@gmail.com | http://richardhendricks.com
+Prishtina, Kosovo | On-site
 
-Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!
+---
+
+I am a passionate software engineer with 3+ years of experience in crafting robust and scalable web applications. My core expertise lies in TypeScript, JavaScript, and React for frontend development, complemented by backend proficiency in Java, Spring Boot, and Express.js. I have a strong foundation in relational databases and have worked with various technologies such as C#, Vue, Lit, and Solid. I thrive in dynamic environments, embracing challenges as opportunities for growth. My collaborative spirit and eagerness to learn make me a valuable asset to any team. I am committed to delivering high-quality software solutions that exceed expectations.
 
 ---
 
 ## Work Experience
 
-### [Google](https://www.google.com/)
+### TelOS-Labs
 
-#### Senior Software Engineer | Oct 2022 - Current
+#### Software Engineer | Jan 2024 - Present
+Prishtina, Kosovo | On-site
 
-Elit mollit ipsum fugiat enim labore et non. Amet nulla cupidatat esse est qui magna culpa velit magna excepteur proident Lorem aliquip ullamco. Anim culpa sit cillum enim consectetur aliqua id Lorem aute id id laborum. Sit nostrud ea anim et deserunt cillum sint culpa laboris. Nisi magna amet minim esse dolore. Do officia ipsum duis exercitation incididunt irure pariatur.
+Building robust, scalable web applications across React/TypeScript frontends and Java/Spring Boot/Express backends with relational databases.
 
-#### Software Engineer | Aug 2018 - Oct 2022
+#### Junior Software Engineer | Oct 2022 - Dec 2023
+Prishtina, Kosovo | On-site
 
-Elit mollit ipsum fugiat enim labore et non. Amet nulla cupidatat esse est qui magna culpa velit magna excepteur proident Lorem aliquip ullamco. Anim culpa sit cillum enim consectetur aliqua id Lorem aute id id laborum. Sit nostrud ea anim et deserunt cillum sint culpa laboris. Nisi magna amet minim esse dolore. Do officia ipsum duis exercitation incididunt irure pariatur.
+Contributed to web application development using TypeScript/JavaScript and supported backend services in Java, Spring Boot, and Express.js.
 
-### [Pied Piper](http://piedpiper.com/)
-
-#### CEO/President | Dec 2013 - Dec 2014
-
-Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.
-
-- Build an algorithm for artist to detect if their music was violating copy right infringement laws
-- Successfully won Techcrunch Disrupt
-- Optimized an algorithm that holds the current world record for Weisman Scores
+---
 
 ## Projects
 
-### [Sillicon Valley](<https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)>)
-
-#### Video Compression for 3D Media
-
-#### Founder | Oct 2014
-
-Innovative middle-out compression algorithm that changes the way we store data.
+---
 
 ## Languages
 
-| English        | English     |
-| -------------- | ----------- |
-| Native speaker | Proficiency |
+| Albanian       | English          |
+| -------------- | -----------      |
+| Native speaker | High Proficiency |
+
+---
 
 ## Education
 
-### University of Oklahoma
+### GJIMNAZI I SPECIALIZUAR MATEMATIKOR
 
-#### Bachelor, Information Technology | Jun 2011 - Jan 2014
+#### High School Degree | Sep 2017 - Jun 2020
+Math intensive track centered on analysis, number theory, combinatorics, algebra, and geometry, with supporting Java/C++ programming and database fundamentals.
+
+### UBT
+
+#### BSc Computer Science | Sep 2020 - Present
+Focused on algorithms, object-oriented development, web infrastructure, databases, graph theory, and applied math. Focused on  applying these concepts through modern web projects.

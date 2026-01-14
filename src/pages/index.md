@@ -13,7 +13,7 @@ Prishtina, Kosovo | On-site
 
 ---
 
-I am a passionate software engineer with 3+ years of experience in crafting robust and scalable web applications. My core expertise lies in TypeScript, JavaScript, and React for frontend development, complemented by backend proficiency in Java, Spring Boot, and Express.js. I have a strong foundation in relational databases and have worked with various technologies such as C#, Vue, Lit, and Solid. I thrive in dynamic environments, embracing challenges as opportunities for growth. My collaborative spirit and eagerness to learn make me a valuable asset to any team. I am committed to delivering high-quality software solutions that exceed expectations.
+I am a passionate software engineer with 4+ years of experience in crafting robust and scalable web applications. My core expertise lies in TypeScript, JavaScript, and React for frontend development, complemented by backend proficiency in Java, Spring Boot, and Express.js. I have a strong foundation in relational databases and have worked with various technologies such as C#, Vue, Lit, and Solid. I thrive in dynamic environments, embracing challenges as opportunities for growth. My collaborative spirit and eagerness to learn make me a valuable asset to any team. I am committed to delivering high-quality software solutions that exceed expectations.
 
 ---
 
@@ -21,15 +21,38 @@ I am a passionate software engineer with 3+ years of experience in crafting robu
 
 ### TelOS-Labs
 
-#### Software Engineer | Jan 2024 - Present
+#### Software Engineer | Jan 2026 - Present
 Prishtina, Kosovo | On-site
 
-Building robust, scalable web applications across React/TypeScript frontends and Java/Spring Boot/Express backends with relational databases.
+- Shipped Next.js app-router features with server/client components, ISR, and tuned caching.
+- Built a Tailwind design system on shadcn/ui primitives for consistent, complex UIs.
+- Integrated openapi-fetch client for typed contracts and responses across backend services.
+- Mentored teammates through code reviews and architecture discussions.
+
+#### Software Engineer | Jan 2025 - Jan 2026
+Prishtina, Kosovo | On-site
+
+- Established CI/CD pipelines for Terraform plan/apply.
+- Authored reusable Terraform modules and standards for shared AWS environments.
+- Enabled centralized admin delegation for Security Hub, GuardDuty, Config and other AWS security related services across org accounts.
+- Implemented guardrails for AWS security services to cut noise and optimize costs.
+- Collaborated with teams to roll out infra changes safely via previews and staged deploys.
+
+#### Software Engineer | Jan 2024 - Jan 2025
+Prishtina, Kosovo | On-site
+
+- Optimized React apps with lazy loading, bundle trimming, and component refactors for performance.
+- Delivered microservice integrations between Spring Boot and Express.js services.
+- Built custom Keycloak authenticators and admin UI extensions for auth flows.
+- Migrated Spring Boot services from 5 to 6 with dependency and security updates.
 
 #### Junior Software Engineer | Oct 2022 - Dec 2023
 Prishtina, Kosovo | On-site
 
-Contributed to web application development using TypeScript/JavaScript and supported backend services in Java, Spring Boot, and Express.js.
+- Implemented UI features, layouts, and Redux state management with React/TypeScript.
+- Handled async flows and backend error surfacing for resilient UX.
+- Added basic backend routes in Express.js.
+- Integrated browser APIs (camera, clipboard, etc.) with React components for richer UX.
 
 ---
 
@@ -55,4 +78,4 @@ Math intensive track centered on analysis, number theory, combinatorics, algebra
 ### UBT
 
 #### BSc Computer Science | Sep 2020 - Present
-Focused on algorithms, object-oriented development, web infrastructure, databases, graph theory, and applied math. Focused on  applying these concepts through modern web projects.
+Focused on algorithms, object-oriented development, web infrastructure, databases, graph theory, and applied math; applying these concepts through modern web projects.

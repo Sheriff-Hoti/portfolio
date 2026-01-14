@@ -27,7 +27,7 @@ Prishtina, Kosovo | On-site
 - Shipped Next.js app-router features with server/client components, ISR, and tuned caching.
 - Built a Tailwind design system on shadcn/ui primitives for consistent, complex UIs.
 - Integrated openapi-fetch client for typed contracts and responses across backend services.
-- Mentored teammates through code reviews and architecture discussions.
+- Mentored teammates through code reviews and architecture discussions.<br><br>
 
 #### Software Engineer | Jan 2025 - Jan 2026
 Prishtina, Kosovo | On-site
@@ -36,7 +36,7 @@ Prishtina, Kosovo | On-site
 - Authored reusable Terraform modules and standards for shared AWS environments.
 - Enabled centralized admin delegation for Security Hub, GuardDuty, Config and other AWS security related services across org accounts.
 - Implemented guardrails for AWS security services to cut noise and optimize costs.
-- Collaborated with teams to roll out infra changes safely via previews and staged deploys.
+- Collaborated with teams to roll out infra changes safely via previews and staged deploys.<br><br>
 
 #### Software Engineer | Jan 2024 - Jan 2025
 Prishtina, Kosovo | On-site
@@ -44,7 +44,7 @@ Prishtina, Kosovo | On-site
 - Optimized React apps with lazy loading, bundle trimming, and component refactors for performance.
 - Delivered microservice integrations between Spring Boot and Express.js services.
 - Built custom Keycloak authenticators and admin UI extensions for auth flows.
-- Migrated Spring Boot services from 5 to 6 with dependency and security updates.
+- Migrated Spring Boot services from 5 to 6 with dependency and security updates.<br><br>
 
 #### Junior Software Engineer | Oct 2022 - Dec 2023
 Prishtina, Kosovo | On-site

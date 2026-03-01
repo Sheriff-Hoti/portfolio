@@ -56,9 +56,9 @@ Prishtina, Kosovo | On-site
 
 ---
 
-## Projects
+<!-- ## Projects
 
----
+--- -->
 
 ## Languages
 
